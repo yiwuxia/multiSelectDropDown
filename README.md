@@ -1,7 +1,7 @@
 # multiSelectDropDown
 
 A Multiselect Dropdown built using AngularJS and Bootstrap  
-###使用
+#使用  
 ##导入
 multiSelectDropDown.min.js  
 multiselect.css  
