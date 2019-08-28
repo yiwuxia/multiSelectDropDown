@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta content="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href="css/Bootstrap/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="css/multiselect.css" media="screen" rel="stylesheet" type="text/css">
+
+
+</head>
+<body>
+
+<div ng-app="appContent" ng-controller="appController">
+
+    <div>
+        <br>
+        {{myData}}
+        <button ng-click="lijin()">button</button>
+    </div>
+
+    <div class="row" style="width: 250px;border: 1px solid red;margin:0 auto">
+        <multi-select-drop-down
+                max-show="3"
+                on-change="setTabDirty"
+                model="selectedOptions"
+                my-model="myData"
+                value-filed="value"
+                data="options">
+        </multi-select-drop-down>
+
+    </div>
+</div>
+
+
+<script type="text/javascript" src="js/Angular/angular.min.js"></script>
+<script type="text/javascript" src="js/Angular/multiSelectDropDown.min.js"></script>
+<script type="text/javascript">
+    var doOnLoad = function () {
+        var appContentModule = angular.module("appContent", ['multiInputSelection'])
+
+        appContentModule.controller("appController", ['$scope', '$http', function ($scope, $http) {
+
+            $scope.setTabDirty = function (option) {
+            }
+            $scope.lijin=function(){
+               console.log($scope.myData);
+            }
+            $scope.myData = [];
+
+            $scope.selectedOptions = [
+                {
+                    value: '1',
+                    name: 'Bangalore'
+                }
+            ];
+
+            $scope.options = [{
+                value: '1',
+                name: 'Bangalore'
+            }, {
+                value: '2',
+                name: 'Goa'
+            }, {
+                value: '3',
+                name: 'Nainital'
+            }, {
+                value: '4',
+                name: 'Hyderabad'
+            }, {
+                value: '5',
+                name: 'Mumbai'
+            }
+
+            ];
+
+        }]);
+
+    }();
+</script>
+</body>
+</html>
