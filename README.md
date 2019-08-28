@@ -9,14 +9,14 @@ bootstrap.min.css
 ## 添加模块  
 var app = angular.module("appContent", ['multiInputSelection'])  
 ## 使用标签  
-<multi-select-drop-down
+&lt;multi-select-drop-down
                 max-show="3"
                 on-change="setTabDirty"
                 model="selectedOptions"
                 my-model="myData"
                 value-filed="value"
-                data="options">
-</multi-select-drop-down>  
+                data="options"&gt;
+&lt;/multi-select-drop-down&gt;
 ## 属性说明  
 on-change：选项选择事件（非必须）  
 model：初始化选中的项，（必须  
